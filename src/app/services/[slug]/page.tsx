@@ -2,11 +2,11 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { services } from "../../data/services";
 
-type Props = {
+interface PageProps {
   params: { slug: string };
-};
+}
 
-export default function ServiceDetailPage({ params }: Props) {
+export default async function ServiceDetailPage({ params }: PageProps) {
   const service = services.find((s) => s.slug === params.slug);
 
   if (!service) return notFound();
