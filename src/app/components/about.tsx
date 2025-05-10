@@ -57,7 +57,7 @@ export default function AboutUs() {
           Starting with minor engineering works from a garage in the backyard of the Pai Kane Family Residence, 
           we have grown into a global powerhouse in power solutions, and our journey is far from over. Innovation 
           is at the heart of everything we do. We have expanded our reach to more than 60 countries, powering 
-          diverse sectors such as power, water, and infrastructure. At Pai Kane Group, we don't just provide answers; 
+          diverse sectors such as power, water, and infrastructure. At Pai Kane Group, we don&apos;t just provide answers; 
           we craft an ecosystem where alternatives, possibilities, and solutions are embraced and implemented with excellence.
         </motion.p>
 

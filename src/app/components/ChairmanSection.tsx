@@ -54,8 +54,8 @@ export default function ChairmanSection() {
             transition={{ duration: 0.6, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            Sudhir Seth's pioneering leadership established Sudhir Power Ltd,
-            India's foremost generator manufacturer and power equipment company,
+            Sudhir Seth &apos;s pioneering leadership established Sudhir Power Ltd,
+            India&apos;s foremost generator manufacturer and power equipment company,
             with a diverse portfolio and strategic collaborations propelling the
             brand to industry preeminence.
           </motion.p>
