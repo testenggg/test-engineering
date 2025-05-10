@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -12,20 +12,37 @@ const navLinks = [
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/ourServices" },
   { name: "Contact Us", href: "/contact" },
-
 ];
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
 
+  // Handle scroll event to toggle opacity
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="fixed top-0 w-full bg-transparent  z-50 bg-opacity-90 backdrop-blur-md">
-      <nav className="flex justify-between items-center px-6 bg-white md:px-10 xl:px-20 py-4 w-full border-b border-[#233B7C] ">
+    <header className="sticky top-0 w-full z-50 transition-all duration-300 bg-transparent bg-opacity-90 backdrop-blur-md">
+
+      <nav className="flex justify-between items-center px-6 md:px-10 xl:px-20 py-4 w-full border-b border-[#233B7C]">
         {/* Logo */}
         <div className="text-2xl font-bold">
           <Link href="/" className="font-bold font-serif">
@@ -39,9 +56,9 @@ const Header = () => {
             <Link
               key={link.name}
               href={link.href}
-              className={`relative overflow-hidden h-6  group font-sans transition duration-300  ${pathname === link.href
-                ? "text-[#233B7C] font-bold" 
-                : "text-black"}`}
+              className={`relative overflow-hidden h-6 group font-sans transition duration-300 ${
+                pathname === link.href ? "text-[#233B7C] font-bold" : "text-black"
+              }`}
             >
               <span className="block transition-transform duration-300 font-sans group-hover:-translate-y-full">
                 {link.name}
@@ -51,8 +68,6 @@ const Header = () => {
               </span>
             </Link>
           ))}
-
-       
         </div>
 
         {/* Mobile Menu Button */}
@@ -68,7 +83,7 @@ const Header = () => {
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
           transition={{ type: "spring", stiffness: 120, damping: 12 }}
-          className="fixed top-0 right-0 w-3/4   h-screen bg-black/90 text-white shadow-lg p-6 flex flex-col z-50"
+          className="fixed top-0 right-0 w-3/4 h-screen bg-black/90 text-white shadow-lg p-6 flex flex-col z-50"
         >
           {/* Close Button */}
           <button onClick={toggleDrawer} className="self-end mb-4">
@@ -85,12 +100,13 @@ const Header = () => {
                 key={link.name}
                 href={link.href}
                 onClick={toggleDrawer}
-                className={`text-lg transition duration-300 ${pathname === link.href ? "text-[#07bbce]  font-bold" : "hover:text-gray-400"}`}
+                className={`text-lg transition duration-300 ${
+                  pathname === link.href ? "text-[#07bbce] font-bold" : "hover:text-gray-400"
+                }`}
               >
                 {link.name}
               </Link>
             ))}
-       
           </div>
         </motion.div>
       )}

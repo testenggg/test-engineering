@@ -37,7 +37,7 @@ const policyLinks = ["Privacy Policy", "Terms of Service", "Cookies Settings"];
 export default function Footer() {
   return (
     <footer className="bg-[#1E3375] text-white px-6 py-10">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
         {/* Left Section */}
         <div>
           <div className="flex items-center gap-3 mb-4">
@@ -65,7 +65,7 @@ export default function Footer() {
             ))}
           </div>
         </div>
-
+<div className="flex justify-center gap-10">
         {/* Center Section */}
         <div className="flex flex-col gap-2 text-sm">
           {centerLinks.map((link, idx) => (
@@ -91,8 +91,13 @@ export default function Footer() {
             </a>
           ))}
         </div>
+        </div>
       </div>
-
+console.log("Rendering Footer component");
+console.log("Social Icons:", socialIcons);
+console.log("Center Links:", centerLinks);
+console.log("Right Links:", rightLinks);
+console.log("Policy Links:", policyLinks);
       <hr className="my-8 border-gray-400" />
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0">

@@ -105,7 +105,7 @@ export default function PoweringSection() {
             }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-3xl md:text-4xl font-bold text-blue-700">
+            <h3 className="text-3xl md:text-4xl font-bold text-black">
               <AnimatedCounter to={item.value} />
             </h3>
             <p className="mt-2 text-base text-black">{item.label}</p>

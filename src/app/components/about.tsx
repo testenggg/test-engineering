@@ -41,8 +41,8 @@ export default function AboutUs() {
             className="w-24 h-24 object-contain"
           />
           <div>
-            <h2 className="text-3xl font-bold text-blue-700">TOUCHING LIVES SINCE</h2>
-            <p className="text-xl text-blue-700">1989</p>
+            <h2 className="text-3xl font-bold text-black">TOUCHING LIVES SINCE</h2>
+            <p className="text-xl text-black">1989</p>
           </div>
         </motion.div>
 
@@ -104,7 +104,7 @@ export default function AboutUs() {
           transition={{ duration: 1, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          From <span className="font-bold text-blue-700">Humble Beginnings</span> to <span className="font-bold text-blue-700">Global Impact</span>
+          From <span className="font-bold text-black">Humble Beginnings</span> to <span className="font-bold text-black">Global Impact</span>
         </motion.p>
       </div>
     </section>
