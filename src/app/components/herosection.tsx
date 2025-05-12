@@ -30,7 +30,7 @@ export default function HeroSection() {
         className="text-start text-white z-10 px-4 md:w-2/3 w-full md:pl-26 pl-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.2, delay: 0.1 }}
+        transition={{ duration: 1.2 }}
         viewport={{ once: true }}
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-4">Powering</h1>

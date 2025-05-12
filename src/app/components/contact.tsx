@@ -5,14 +5,7 @@ function ContactPage() {
   return (
     <div className="bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
       {/* Main Heading */}
-      <motion.h1
-        className="text-4xl font-bold text-gray-900 mb-6 text-center"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        Contact Us
-      </motion.h1>
+    
 
       {/* Introductory Text */}
       <motion.div

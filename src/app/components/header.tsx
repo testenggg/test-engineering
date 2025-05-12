@@ -40,7 +40,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 w-full z-50 transition-all duration-300 bg-transparent bg-opacity-90 backdrop-blur-md">
+    <header className="sticky top-0 w-full z-50 transition-all duration-300 bg-transparent bg-opacity-65 backdrop-blur-2xl">
 
       <nav className="flex justify-between items-center px-6 md:px-10 xl:px-20 py-4 w-full border-b border-[#233B7C]">
         {/* Logo */}
@@ -56,14 +56,14 @@ const Header = () => {
             <Link
               key={link.name}
               href={link.href}
-              className={`relative overflow-hidden h-6 group font-sans transition duration-300 ${
+              className={`relative overflow-hidden h-6 group font-sans  ${
                 pathname === link.href ? "text-[#233B7C] font-bold" : "text-black"
               }`}
             >
-              <span className="block transition-transform duration-300 font-sans group-hover:-translate-y-full">
+              <span className="block transition-transform duration-300 font-sans">
                 {link.name}
               </span>
-              <span className="absolute top-full left-0 text-gray-400 font-sans transition-transform duration-300 group-hover:translate-y-[-100%]">
+              <span className="absolute top-full left-0 text-gray-400 font-sans ">
                 {link.name}
               </span>
             </Link>
