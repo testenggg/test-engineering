@@ -1,9 +1,10 @@
-"use client";
+'use client'
+
 import Image from "next/image";
-import { notFound } from "next/navigation";
-import Link from "next/link";
 import { useState } from "react";
 import { services } from "@/app/data/services";
+import { notFound } from "next/navigation";
+import { useParams } from "next/navigation"; // Use useParams instead of useRouter
 
 type TabItem = {
   icon?: string;
@@ -16,22 +17,24 @@ type Tab = {
   items: TabItem[];
 };
 
-export default function ServiceDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const service = services.find((s) => s.slug === params.slug);
+export default function ServiceDetailPage() {
+  const params = useParams();  // Access route params using useParams
+  const slug = params.slug as string;  // Extract slug from params and cast it to a string
+
+  // If slug is not available, return 404
+  if (!slug) {
+    console.error("Slug parameter is missing");
+    return notFound();  // Or display an appropriate message
+  }
+
+  const service = services.find((s) => s.slug === slug);
   if (!service) return notFound();
 
   return (
     <div className="py-4">
       {/* Breadcrumb */}
       <div className="text-sm px-4">
-        <Link href="/" className="text-blue-600 hover:underline">
-          Home
-        </Link>{" "}
-        / <span className="capitalize">{params.slug.replace("-", " ")}</span>
+        / <span className="capitalize">{slug.replace("-", " ")}</span>
       </div>
 
       {/* Hero Section */}
@@ -71,7 +74,6 @@ export default function ServiceDetailPage({
   );
 }
 
-// Tabs Component
 function Tabs({ tabs }: { tabs: Tab[] }) {
   const [activeMain, setActiveMain] = useState(0);
   const currentItems = tabs[activeMain]?.items || [];
