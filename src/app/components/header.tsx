@@ -40,9 +40,9 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 w-full z-50 transition-all duration-300 bg-transparent bg-opacity-65 backdrop-blur-2xl">
+    <header className="sticky top-0 w-full z-50 bg-white ">
 
-      <nav className="flex justify-between items-center px-6 md:px-10 xl:px-20 py-4 w-full border-b border-[#233B7C]">
+      <nav className="flex justify-between items-center px-6 md:px-10 xl:px-20 py-4 w-full ">
         {/* Logo */}
         <div className="text-2xl font-bold">
           <Link href="/" className="font-bold font-serif">
