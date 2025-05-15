@@ -57,7 +57,7 @@ export default function PoweringSection() {
         viewport={{ once: true }}
       >
         <Image
-          src="/img/logo.png"
+          src="CompanyLogo.svg"
           alt="Powering Your Future"
           width={500}
           height={150}

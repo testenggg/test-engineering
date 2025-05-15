@@ -30,7 +30,7 @@ const Header = () => {
         {/* Logo */}
         <div className="text-2xl font-bold">
           <Link href="/" className="font-bold font-serif">
-            <Image src="/logo.png" alt="Logo" width={140} height={40} />
+            <Image src="/CompanyLogo.svg" alt="Logo" width={140} height={40} />
           </Link>
         </div>
 

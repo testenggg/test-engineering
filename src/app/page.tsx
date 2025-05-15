@@ -12,7 +12,6 @@ export default function Home() {
       <ServicesOverview />
       <PoweringSection />
       <AboutSection />
-
       <ClientLogos />
       <Advertisement />
     </div>
