@@ -103,7 +103,7 @@ export default function PoweringSection() {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 },
             }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 1.5 }}
           >
             <h3 className="text-3xl md:text-4xl font-bold text-black">
               <AnimatedCounter to={item.value} />
