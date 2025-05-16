@@ -1,30 +1,17 @@
-'use client'
+"use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { services } from "@/app/data/services";
 import { notFound } from "next/navigation";
-import { useParams } from "next/navigation"; // Use useParams instead of useRouter
-
-type TabItem = {
-  icon?: string;
-  range: string;
-  content: string;
-};
-
-type Tab = {
-  label: string;
-  items: TabItem[];
-};
+import { useParams } from "next/navigation";
 
 export default function ServiceDetailPage() {
-  const params = useParams();  // Access route params using useParams
-  const slug = params.slug as string;  // Extract slug from params and cast it to a string
+  const params = useParams();
+  const slug = params.slug as string;
 
-  // If slug is not available, return 404
   if (!slug) {
     console.error("Slug parameter is missing");
-    return notFound();  // Or display an appropriate message
+    return notFound();
   }
 
   const service = services.find((s) => s.slug === slug);
@@ -52,7 +39,7 @@ export default function ServiceDetailPage() {
         </div>
       </div>
 
-      {/* Two-Column Section */}
+      {/* Image + Description */}
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 p-6 md:p-12">
         <div className="w-full h-[300px] relative">
           <Image
@@ -66,61 +53,6 @@ export default function ServiceDetailPage() {
           <h2 className="text-2xl font-semibold mb-4">{service.title}</h2>
           <p className="text-gray-700 leading-7">{service.description}</p>
         </div>
-      </div>
-
-      {/* Tabs Section */}
-      <Tabs tabs={service.tabs || []} />
-    </div>
-  );
-}
-
-function Tabs({ tabs }: { tabs: Tab[] }) {
-  const [activeMain, setActiveMain] = useState(0);
-  const currentItems = tabs[activeMain]?.items || [];
-
-  return (
-    <div className="max-w-5xl mx-auto px-4 md:px-0 mt-12">
-      {/* Main Tabs */}
-      <div className="flex space-x-4 overflow-x-auto mb-6">
-        {tabs.map((tab, i) => (
-          <button
-            key={i}
-            className={`px-4 py-2 rounded-t-md border-b-2 whitespace-nowrap cursor-pointer ${
-              i === activeMain
-                ? "border-[#1E3375] text-white bg-[#1E3375]"
-                : "border-transparent text-gray-500"
-            }`}
-            onClick={() => setActiveMain(i)}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
-
-      {/* Tab Items Below */}
-      <div className="space-y-6">
-        {currentItems.map((item, index) => (
-          <div
-            key={index}
-            className="p-4 border rounded-md shadow-sm bg-white flex flex-col md:flex-row justify-between items-center gap-4 flex-wrap"
-          >
-            <div className="flex items-center gap-3">
-              {item.icon && (
-                <Image
-                  src={item.icon}
-                  alt="icon"
-                  width={40}
-                  height={40}
-                />
-              )}
-              <p className="text-gray-800 font-medium">{item.range}</p>
-            </div>
-            <p className="text-gray-800 text-center">{item.content}</p>
-            <button className="px-4 py-2 bg-[#1E3375] text-white rounded-2xl hover:bg-[#162753]">
-              Download Brochure
-            </button>
-          </div>
-        ))}
       </div>
     </div>
   );

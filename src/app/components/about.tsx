@@ -89,8 +89,8 @@ export default function AboutUs() {
           viewport={{ once: true }}
         >
           {[
-            "high-voltage1.jpg",
-            "high-voltage2.jpg",
+            "services2.jpg",
+            "services1.jpg",
             "high-voltage-3.jpg",
             "man-installing.jpg",
           ].map((img, idx) => (

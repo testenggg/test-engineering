@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import ServicesOverview from "../components/ServicesOverview";
+import OurServices from "../components/OurServices";
 
 function OurService() {
   return (
@@ -18,8 +19,8 @@ function OurService() {
           </div>
         </div>
       </div>
-      {/* <OurServices/> */}
       <ServicesOverview />
+      <OurServices/>
     </section>
   );
 }
