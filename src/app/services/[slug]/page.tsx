@@ -19,11 +19,6 @@ export default function ServiceDetailPage() {
 
   return (
     <div className="py-4">
-      {/* Breadcrumb */}
-      <div className="text-sm px-4">
-        / <span className="capitalize">{slug.replace("-", " ")}</span>
-      </div>
-
       {/* Hero Section */}
       <div className="relative h-[200px] md:h-[300px] w-full mt-4">
         <Image
