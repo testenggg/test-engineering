@@ -66,7 +66,7 @@ const Header = () => {
           initial={{ x: "100%" }}
           animate={{ x: 0 }}
           exit={{ x: "100%" }}
-          transition={{ type: "spring", stiffness: 120, damping: 12 }}
+          transition={{ type: "tween", ease: "easeInOut", duration: 0.4 }}
           className="fixed top-0 right-0 w-full h-screen z-50 flex"
         >
           {/* Transparent Black Overlay (1/4 width) */}
