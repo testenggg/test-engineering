@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Test Engineering",
-  description: "India Leading Manufacturer of Power Generation",
+  description: "Empowering Oman's powering Needs",
 };
 
 export default function RootLayout({

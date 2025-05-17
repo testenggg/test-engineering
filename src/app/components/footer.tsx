@@ -32,7 +32,6 @@ const rightLinks = [
   "Sustainability Efforts",
 ];
 
-const policyLinks = ["Privacy Policy", "Terms of Service", "Cookies Settings"];
 
 export default function Footer() {
   return (
@@ -45,12 +44,13 @@ export default function Footer() {
               src="/img/logo1.png"
               alt="Test Engineering"
               width={200}
-              height={200}
+              height={40}
             />
           </div>
           <div className="">
             <p className="text-xs">Address:</p>
-            <p className="text-xs">Level 1, 12 Sample St, Sydney NSW 2000</p>
+            <p className="text-xs">#31, 1st Floor , Al Khoudh</p>
+            <p className="text-xs">Contact: +96898833765</p>
           </div>
           <div className="flex gap-4 text-lg">
             {socialIcons.map((item, idx) => (
@@ -98,17 +98,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs space-y-4 md:space-y-0">
         <p>© 2025 Test Engineering. All rights reserved.</p>
-        <div className="flex gap-4 underline">
-          {policyLinks.map((link, idx) => (
-            <a
-              href="#"
-              key={idx}
-              className="hover:text-gray-300 transition-colors"
-            >
-              {link}
-            </a>
-          ))}
-        </div>
+       
       </div>
     </footer>
   );

@@ -24,7 +24,8 @@ function ContactPage() {
       >
         <p className="text-lg mb-4">Thank you for visiting us!</p>
         <p className="text-gray-700 mb-8 max-w-3xl mx-auto">
-          We&apos;d love to hear from you. Please fill out the form below, and our team will get back to you within 5 working days.
+          We&apos;d love to hear from you. Please fill out the form below, and
+          our team will get back to you within 5 working days.
         </p>
       </motion.div>
 
@@ -38,7 +39,9 @@ function ContactPage() {
           transition={{ duration: 0.6 }}
         >
           <div>
-            <label className="block text-sm font-medium text-gray-700">Name</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Name
+            </label>
             <input
               type="text"
               required
@@ -47,7 +50,9 @@ function ContactPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">Email</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Email
+            </label>
             <input
               type="email"
               required
@@ -56,7 +61,9 @@ function ContactPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">Message</label>
+            <label className="block text-sm font-medium text-gray-700">
+              Message
+            </label>
             <textarea
               rows={5}
               required
@@ -81,12 +88,13 @@ function ContactPage() {
         >
           <iframe
             title="Our Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1104187638325!2d144.95592531531803!3d-37.817209979751824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5775b4dc876df76!2sFederation%20Square!5e0!3m2!1sen!2sin!4v1616004270586!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.6617449653704!2d58.1853566!3d23.6164611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e8de392117155df%3A0xe95a6878685ba25!2s8HOURS!5e0!3m2!1sen!2sin!4v1747501432522!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ minHeight: "350px", border: "0" }}
             allowFullScreen
             loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </motion.div>
       </div>
