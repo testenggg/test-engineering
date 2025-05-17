@@ -45,12 +45,13 @@ export default function Footer() {
               src="/img/logo1.png"
               alt="Test Engineering"
               width={200}
-              height={200}
+              height={40}
             />
           </div>
           <div className="">
             <p className="text-xs">Address:</p>
-            <p className="text-xs">Level 1, 12 Sample St, Sydney NSW 2000</p>
+            <p className="text-xs">#31, 1st Floor , Al Khoudh</p>
+            <p className="text-xs">Contact: +96898833765</p>
           </div>
           <div className="flex gap-4 text-lg">
             {socialIcons.map((item, idx) => (
