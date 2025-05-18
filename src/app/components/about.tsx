@@ -19,7 +19,7 @@ export default function AboutUs() {
           alt="Factory Image"
           width={600}
           height={400}
-          className="rounded-xl shadow-lg w-full h-auto object-cover"
+          className="rounded-xl shadow-lg w-full h-[510px] object-cover"
         />
       </motion.div>
 
