@@ -17,19 +17,19 @@ const socialIcons = [
 ];
 
 const centerLinks = [
-  "Generator Rentals",
-  "Rental Plans",
+  "Home",
+  "About us",
   "Contact Us",
   "About Us",
-  "FAQ Section",
+  "Services",
 ];
 
 const rightLinks = [
-  "Customer Support",
-  "Blog Posts",
-  "Testimonials",
-  "Careers Page",
-  "Sustainability Efforts",
+  "Generator Rental",
+  "Meter Calibration",
+  "DCRC",
+  "Meter Replacement",
+  "Meter Reading",
 ];
 
 

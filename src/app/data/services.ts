@@ -17,6 +17,7 @@ export const services = [
       "Our DCRC service ensures efficient diagnosis and repair of electronic meters for accurate readings.Our DCRC service ensures efficient diagnosis and repair of electronic meters for accurate readings.Our DCRC service ensures efficient diagnosis and repair of electronic meters for accurate readings.Our DCRC service ensures efficient diagnosis and repair of electronic meters for accurate readings.Our DCRC service ensures efficient diagnosis and repair of electronic meters for accurate readings.Our DCRC service ensures efficient diagnosis and repair of electronic meters for accurate readings.",
     heroImg: "/services/services3.jpg",
   },
+  
   {
     title: "Meter Calibration",
     img: "/meter/meter.jpg",
@@ -43,6 +44,14 @@ export const services = [
     description:
       "Accurate and timely meter reading services to ensure proper billing and consumption tracking.Accurate and timely meter reading services to ensure proper billing and consumption tracking.Accurate and timely meter reading services to ensure proper billing and consumption tracking.Accurate and timely meter reading services to ensure proper billing and consumption tracking.",
     heroImg: "/services/services1.jpg",
+  },
+    {
+    title: "Generator rentals",
+    img: "/img/factory1.jpg",
+    icon: "/icons/icon1.png",
+    slug: "power-distribution",
+    description: "We offer reliable generator rental solutions tailored to meet your short-term and long-term power needs. Whether for construction, events, or emergency backup, our generators ensure uninterrupted power with professional support and maintenance.",
+    heroImg: "/services/services3.jpg",
   },
 ];
 

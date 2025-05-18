@@ -1,6 +1,7 @@
 import React from 'react'
 import AboutUs from '../components/about'
 import Image from 'next/image'
+import OurImpact from '../components/OurImpact'
 
 function About() {
   return (
@@ -19,6 +20,7 @@ function About() {
         </div>
       </div>
       <AboutUs/>
+      <OurImpact/>
     </section>
   )
 }

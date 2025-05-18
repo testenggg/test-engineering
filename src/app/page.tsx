@@ -3,7 +3,7 @@ import AboutSection from "./components/about";
 import PoweringSection from "./components/PoweringSection";
 import Advertisement from "./components/Banner";
 import OurServices from "./components/OurServices";
-import ServicesOverview from "./components/ServicesOverview";
+import OurImpact from "./components/OurImpact";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <HeroSection />
       <PoweringSection />
       <AboutSection />
-      <ServicesOverview />
+      <OurImpact/>
       <OurServices />
       <Advertisement />
     </div>
