@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="">
             <p className="text-xs">Address:</p>
             <p className="text-xs">#31, 1st Floor , Al Khoudh</p>
-            <p className="text-xs">Contact: +96898833765</p>
+            <p className="text-xs">Contact: +968 9883 3765</p>
           </div>
           <div className="flex gap-4 text-lg">
             {socialIcons.map((item, idx) => (
