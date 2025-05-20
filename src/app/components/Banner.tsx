@@ -2,8 +2,11 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function Advertisment() {
+  const router = useRouter();
+
   return (
     <section className="relative h-[80vh] w-full">
       {/* Background Image */}
@@ -39,26 +42,29 @@ export default function Advertisment() {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          Contact Test Engineering today for reliable generator rentals tailored to your business needs.
+          Contact Test Engineering today for reliable generator rentals tailored
+          to your business needs.
         </motion.p>
 
         {/* Buttons with scroll animation */}
         <div className="flex gap-4">
           <motion.button
-            className="bg-white text-black font-semibold py-2 px-5 rounded hover:bg-gray-200 transition"
+            className="bg-white text-black font-semibold py-2 px-5 rounded hover:bg-gray-200 transition cursor-pointer"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
             viewport={{ once: true }}
+            onClick={() => router.push("/contact")}
           >
             Inquire
           </motion.button>
           <motion.button
-            className="border border-white text-white font-semibold py-2 px-5 rounded hover:bg-white hover:text-black transition"
+            className="border border-white cursor-pointer text-white font-semibold py-2 px-5 rounded hover:bg-white hover:text-black transition"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
+            onClick={() => router.push("/about")}
           >
             Learn More
           </motion.button>
