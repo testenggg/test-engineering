@@ -1,12 +1,21 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
+  const handleScroll = () => {
+    const section = document.getElementById("discover-target");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
-    <div className="relative h-96 w-full flex items-center justify-between overflow-hidden px-6">
+    <div
+      className="relative h-96 w-full flex items-center justify-between overflow-hidden px-6 "
+      id="discover-target"
+    >
       {/* Background image */}
       <Image
         src="/services/man-installing.jpg"
@@ -35,9 +44,13 @@ export default function HeroSection() {
       >
         <h1 className="text-4xl md:text-6xl font-bold mb-4">Powering</h1>
         <h2 className="text-xl md:text-2xl font-medium mb-8">
-          India’s Leading Manufacturer of Power Generation & Power Distribution Equipment’s with over 50 years of Trust & Reliability
+          India’s Leading Manufacturer of Power Generation & Power Distribution
+          Equipment’s with over 50 years of Trust & Reliability
         </h2>
-        <button className="bg-[#233B7C] text-white px-8 py-3 rounded-full font-bold hover:bg-opacity-90 transition">
+        <button
+          onClick={handleScroll}
+          className="bg-[#233B7C] cursor-pointer text-white px-8 py-3 rounded-full font-bold hover:bg-opacity-90 transition"
+        >
           Discover More
         </button>
       </motion.div>
