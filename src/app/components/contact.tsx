@@ -1,11 +1,51 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch(
+        "https://formsubmit.co/ajax/testenggoman@outlook.com",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (res.ok) {
+        toast.success("Email sent, thank you!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Error sending email.");
+    }
+  };
+
   return (
     <div className="bg-white py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-
       {/* Introductory Text */}
       <motion.div
         className="mb-12 text-center"
@@ -22,8 +62,8 @@ function ContactPage() {
 
       {/* Form + Map Grid */}
       <div className="grid md:grid-cols-2 gap-12">
-        {/* Contact Form */}
         <motion.form
+          onSubmit={handleSubmit}
           className="space-y-6"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -35,7 +75,10 @@ function ContactPage() {
             </label>
             <input
               type="text"
+              name="name"
               required
+              value={formData.name}
+              onChange={handleChange}
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -46,7 +89,10 @@ function ContactPage() {
             </label>
             <input
               type="email"
+              name="email"
               required
+              value={formData.email}
+              onChange={handleChange}
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -56,8 +102,11 @@ function ContactPage() {
               Message
             </label>
             <textarea
+              name="message"
               rows={5}
               required
+              value={formData.message}
+              onChange={handleChange}
               className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
@@ -89,6 +138,8 @@ function ContactPage() {
           ></iframe>
         </motion.div>
       </div>
+            <Toaster position="top-center" reverseOrder={false} />
+
     </div>
   );
 }
